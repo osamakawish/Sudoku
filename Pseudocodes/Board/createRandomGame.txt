@@ -1,0 +1,16 @@
+
+
+
+Goal: Create a random game.
+
+
+0. Initialize variables.
+	- A <map> variable mapping all the remaining [rows] to all the remaining [cells] in them.
+	- A <map> variable with each number as keys and app positions used for it.
+	- 
+
+1. Create random position for each number remaining.
+	.1. Pick a random remaining [row]. 
+	.2. Then a random remaining [cell] from given row.
+
+2. Remove a random set of numbers while making sure the solution remains the same. (Create a solution function for the board here.)
