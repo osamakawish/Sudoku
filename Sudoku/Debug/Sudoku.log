@@ -1,6 +1,17 @@
-﻿  stdafx.cpp
+﻿  board.cpp
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C2143: syntax error: missing ';' before '<'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C2238: unexpected token(s) preceding ';'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C2143: syntax error: missing ';' before '<'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C2238: unexpected token(s) preceding ';'
+c:\users\osama\source\repos\sudoku\sudoku\board.cpp(17): error C2039: 'createRandomGame': is not a member of 'board'
+  c:\users\osama\source\repos\sudoku\sudoku\board.h(3): note: see declaration of 'board'
   Sudoku.cpp
-  board.cpp
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C2143: syntax error: missing ';' before '<'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\osama\source\repos\sudoku\sudoku\board.h(10): error C2238: unexpected token(s) preceding ';'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C2143: syntax error: missing ';' before '<'
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\osama\source\repos\sudoku\sudoku\board.h(11): error C2238: unexpected token(s) preceding ';'
   Generating Code...
-  Sudoku.vcxproj -> C:\Users\osama\source\repos\Sudoku\Debug\Sudoku.exe
-  Sudoku.vcxproj -> C:\Users\osama\source\repos\Sudoku\Debug\Sudoku.pdb (Partial PDB)

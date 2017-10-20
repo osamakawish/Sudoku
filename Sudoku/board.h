@@ -6,7 +6,7 @@ public:
 	~board();
 
 private:
-	int gameSize; int difficulty;
+	unordered_set<int> values; int difficulty;
 	vector<vector<int>> game;
 	vector<vector<int>> createRandomGame(); // Creates a random workable board.
 	void hasSolution(); // Checks if there's a solution from the current state.
