@@ -1,0 +1,13 @@
+
+
+Returns the solution set from given from a given game.
+
+Make sure to memorize past behaviour for efficiency, and use them at the start of the function definition.
+
+
+1. Check if the input is memorized. Continue iff it isn't. Else, return true.
+
+2. Determine the next possible inputs and the solutions from them given the current board. Add them to the current set of solutions if there's anything new. If not, continue with a different input. repeat over all inputs. 
+(Make sure to not have repeats, for efficiency.)
+
+3. Return the solution set. 
