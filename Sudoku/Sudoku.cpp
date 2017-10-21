@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <random>
-#include "board.h"
+#include "game.h"
 using namespace std;
 
 int gameSize; int difficulty;
@@ -34,7 +34,7 @@ int main()
 	}
 	
 	// Create game board based on size and difficulty.
-	board B = board(gameSize, difficulty);
+	game G = game(gameSize, difficulty);
 	
 	// Run the game.
 	
