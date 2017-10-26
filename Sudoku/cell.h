@@ -6,6 +6,7 @@ public:
 
 	void setValue(int v);
 
+	int getValue();
 	int getBox();
 	int getRow();
 	int getCol();
@@ -16,7 +17,6 @@ public:
 
 	// Cell content
 	bool isEmpty(); // Determines if cell is empty.
-	int value(); // Returns the value at a given cell.
 	void clear(); // Removes item in cell and empties it.
 
 	~cell();

@@ -3,6 +3,8 @@
 #include "board.h"	// The game board.
 #include "cell.h"	// The cells of the game board.
 #include <set>		// Evaluate solution set from current game board.
+#include <random>	// Create random board.
+#include <time.h>	// Random seed.
 using namespace std;
 
 game::game(int gsize, int difficulty)

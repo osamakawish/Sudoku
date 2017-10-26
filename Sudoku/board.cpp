@@ -4,8 +4,6 @@
 #include <vector>	// The contents of the game board itself.
 #include <set>		// Store info where each integer has been placed so far.
 #include <map>		// Store info where each integer has been placed so far.
-#include <random>	// Create random board.
-#include <time.h>	// Random seed.
 using namespace std;
 
 
@@ -54,6 +52,9 @@ void board::setSize(int s)
 	{
 		// Adds the empty vector.
 		contents.push_back({});
+
+		// Initialize empty set to each number's location set.
+		locations.insert({ i + 1, {} });
 	}
 
 	// Add all the cells to the board.
@@ -72,7 +73,8 @@ void board::setSize(int s)
 void board::setCell(cell c, int v) 
 {
 	c.setValue(v);
-	// UNFINISHED: Store info in each of the maps.
+	// UNFINISHED: Store info in each of the maps. 
+	locations[v].insert(c);
 }
 
 vector<cell> board::row(int r) // Requires r < boardSize*boardSize
@@ -114,9 +116,17 @@ vector<cell> board::box(int x, int y) // Requires (x < boardSize) and (y < board
 	return toReturn;
 }
 
-vector<vector<int>> board::createRandom() // Creates a random game board.
+int board::boxNumber(int x, int y)
 {
-	
-	
-	return vector<vector<int>>();
+	return 3*x + y;
+}
+
+int board::boxRow(int cellRow)
+{
+	return (cellRow / boardSize) + 1;
+}
+
+int board::boxCol(int cellCol)
+{
+	return (cellCol / boardSize) + 1;
 }

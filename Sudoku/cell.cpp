@@ -4,13 +4,18 @@
 using namespace std;
 
 
-cell::cell(int x, int y) : row(x), col(y)
+cell::cell(int x, int y) : row(x+1), col(y+1)
 {
 }
 
 void cell::setValue(int v)
 {
 	int value = v;
+}
+
+int cell::getValue()
+{
+	return value;
 }
 
 int cell::getBox()
@@ -44,11 +49,6 @@ void cell::removeNote(int val)
 bool cell::isEmpty()
 {
 	return false;
-}
-
-int cell::value()
-{
-	return 0;
 }
 
 void cell::clear()
