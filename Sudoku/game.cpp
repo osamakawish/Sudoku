@@ -15,6 +15,8 @@ game::~game()
 {
 }
 
+
+
 board game::createRandomBoard() 
 {
 	return board({});
