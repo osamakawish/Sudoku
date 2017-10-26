@@ -1,10 +1,11 @@
 #include "stdafx.h"
-#include "board.h"
-#include "cell.h"
-#include <vector>
-#include <set>
-#include <map>
-#include <random>
+#include "board.h"	// Header file.
+#include "cell.h"	// The cells of the game board.
+#include <vector>	// The contents of the game board itself.
+#include <set>		// Store info where each integer has been placed so far.
+#include <map>		// Store info where each integer has been placed so far.
+#include <random>	// Create random board.
+#include <time.h>	// Random seed.
 using namespace std;
 
 
@@ -47,52 +48,75 @@ void board::setSize(int s)
 	// Set the value of variable boardSize to s.
 	boardSize = s;
 
-	// Initial vectors inside the contents variable.
+	// Initialize empty vectors inside the contents variable.
 	// contents type: vector<vector<cell>>
 	for (int i = 0; i < s*s; i++)
 	{
+		// Adds the empty vector.
 		contents.push_back({});
 	}
 
 	// Add all the cells to the board.
 	for (int i = 0; i < s*s; i++)
 	{
-		vector<cell> v = contents.at(i);
+		// The i'th row on the board.
+		vector<cell> row = contents.at(i); 
 		for (int j = 0; j < s*s; j++)
 		{
-			v.push_back(cell(i, j));
+			// Cell indexing starts at 0.
+			row.push_back(cell(i+1, j+1)); 
 		}
 	}
 }
 
-void board::setCell(cell c, int v)
+void board::setCell(cell c, int v) 
 {
+	c.setValue(v);
+	// UNFINISHED: Store info in each of the maps.
 }
 
-vector<int> board::row(int)
+vector<cell> board::row(int r) // Requires r < boardSize*boardSize
 {
-	return vector<int>();
+	return contents[r];
 }
 
-vector<int> board::column(int)
+vector<cell> board::column(int c) // Requires c < boardSize*boardSize
 {
-	return vector<int>();
+	vector<cell> toReturn = {};
+
+	// r = Row number of game board
+	for (int r = 0; r < boardSize*boardSize; r++) 
+	{
+		// Contents = vector<vector<cell>> - ie. The game board itself.
+		vector<cell> row = contents[r]; // The vector at row r.
+		toReturn.push_back(row[c]);
+	}
+	
+	return toReturn;
 }
 
-vector<int> board::box(int x, int y)
+vector<cell> board::box(int x, int y) // Requires (x < boardSize) and (y < boardSize)
 {
-	return vector<int>();
+	vector<cell> toReturn = {};
+	
+	// Rows go from nx to n(x+1). Columns from ny to n(y+1)
+	int n = boardSize; 
+	
+	// Add all appropriate cells to toReturn.
+	for (int row = n*x; row < n*(x+1); row++)
+	{
+		for (int col = n*y; col < n*(y + 1); col++) {
+			// Adds appropriate cells to the vector to be returned.
+			toReturn.push_back(contents[row][col]); 
+		}
+	}
+
+	return toReturn;
 }
 
-void board::clearBoard()
+vector<vector<int>> board::createRandom() // Creates a random game board.
 {
-}
-
-void board::setMain()
-{
-}
-
-vector<vector<int>> board::createRandom()
-{
+	
+	
 	return vector<vector<int>>();
 }

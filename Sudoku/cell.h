@@ -2,7 +2,7 @@
 class cell
 {
 public:
-	cell(int x, int y);
+	cell(int x=0, int y=0);
 
 	void setValue(int v);
 

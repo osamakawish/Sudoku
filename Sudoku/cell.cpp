@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "cell.h"
-#include <set>
+#include "cell.h"	// Header file.
+#include <set>		// Noted integers placed on cell.
 using namespace std;
 
 

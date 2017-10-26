@@ -18,13 +18,9 @@ public:
 	cell getCell(int x, int y);
 
 	// For determining what's located where.
-	vector<int> row(int num); // Return contents of the num'th row.
-	vector<int> column(int num); // Return contents of the num'th column.
-	vector<int> box(int x, int y); // Return contents of given box.
-
-	void clearBoard(); // Clear the board and resets it to main.
-	
-	void setMain(); // Sets current board as main board. For resetting game if necessary.
+	vector<cell> row(int num); // Return contents of the num'th row.
+	vector<cell> column(int num); // Return contents of the num'th column.
+	vector<cell> box(int x, int y); // Return contents of given boardSize x boardSize box.
 
 	vector<vector<int>> createRandom(); // Creates a random board and assigns it as the main one.
 
