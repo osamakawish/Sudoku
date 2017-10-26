@@ -8,18 +8,15 @@ using namespace std;
 
 game::game(int gsize, int difficulty)
 {
-	gameBoard = createRandomBoard();
+	
 }
 
 game::~game()
 {
 }
 
-
-
-board game::createRandomBoard() 
+void game::addInput(int coords[2], int value)
 {
-	return board({});
 }
 
 set<board> game::solution()
