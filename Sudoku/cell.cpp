@@ -4,7 +4,7 @@
 using namespace std;
 
 
-cell::cell(int x, int y) : row(x+1), col(y+1)
+cell::cell(int x, int y) : row(x), col(y)
 {
 }
 
