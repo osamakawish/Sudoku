@@ -29,20 +29,40 @@ string board::view()
 
 int board::getSize()
 {
-	return 0;
+	return boardSize;
 }
 
 cell board::getCell(int x, int y)
 {
-	return cell(x, y);
+	return contents.at(x).at(y); // The cell at coordinates (x, y).
 }
 
-void board::setSize()
+void board::setSize(int s)
 {
-}
+	// Cannot change the size of the board.
+	if (boardSize != 0) {
+		throw new exception("value of boardSize already defined.");
+	}
+	
+	// Set the value of variable boardSize to s.
+	boardSize = s;
 
-void board::pushCell(int x, int y)
-{
+	// Initial vectors inside the contents variable.
+	// contents type: vector<vector<cell>>
+	for (int i = 0; i < s*s; i++)
+	{
+		contents.push_back({});
+	}
+
+	// Add all the cells to the board.
+	for (int i = 0; i < s*s; i++)
+	{
+		vector<cell> v = contents.at(i);
+		for (int j = 0; j < s*s; j++)
+		{
+			v.push_back(cell(i, j));
+		}
+	}
 }
 
 void board::setCell(cell c, int v)

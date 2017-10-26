@@ -3,12 +3,11 @@ class board
 {
 public:
 	board(); // initializes an empty board.
-	board(vector<vector<cell>> g);
+	board(vector<vector<cell>> b);
 	~board();
 
 	// Creating from empty board. Cannot do first two if main board is defined.
-	void setSize(); // Sets the size of the board.
-	void pushCell(int x, int y); // Initializes new cell at given coordinates.
+	void setSize(int s); // Sets the size of the board.
 	void setCell(cell c, int v); // Gives value to given cell.
 
 	// View the content of the board.
@@ -31,13 +30,10 @@ public:
 
 private:
 	
-	int size = 0; // The square root of the width of the square game board.
+	int boardSize = 0; // The square root of the width of the square game board.
 
-	map<int, set<cell>> currentLocations; // Determines where each integer is located.
-	map<int, set<cell>> mainLocations; // Determines where each integer is located.
-
-	vector<vector<int>> current; // The current state of the board.
-	const vector<vector<int>> main; // The main board to be solved. Default is empty board.
+	vector<vector<cell>> contents = {}; // The content of the board.
+	map<int, set<cell>> locations; // Determines where each integer is located.
 
 	// Location set of each number
 	map<int, int> rows = {};

@@ -8,8 +8,9 @@ cell::cell(int x, int y) : row(x), col(y)
 {
 }
 
-void cell::setValue()
+void cell::setValue(int v)
 {
+	int value = v;
 }
 
 int cell::getBox()

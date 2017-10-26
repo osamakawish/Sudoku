@@ -4,7 +4,7 @@ class cell
 public:
 	cell(int x, int y);
 
-	void setValue();
+	void setValue(int v);
 
 	int getBox();
 	int getRow();
@@ -22,7 +22,7 @@ public:
 	~cell();
 
 private:
-	int value;
+	int value = 0;
 	const int row;
 	const int col;
 	set<int> notes;

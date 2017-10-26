@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "game.h"
 #include "board.h"
+#include "cell.h"
 #include <vector>
 #include <set>
 #include <random>
@@ -15,8 +16,13 @@ game::~game()
 {
 }
 
-void game::addInput(int coords[2], int value)
+void game::addInput(cell c, int value)
 {
+}
+
+board game::createRandomBoard()
+{
+	return board();
 }
 
 set<board> game::solution()
