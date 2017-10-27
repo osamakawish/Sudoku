@@ -3,7 +3,6 @@ class board
 {
 public:
 	board(); // initializes an empty board.
-	board(vector<vector<cell>> b);
 	~board();
 
 	// Creating from empty board. Cannot do first two if main board is defined.

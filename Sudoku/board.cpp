@@ -12,11 +12,6 @@ board::board()
 
 }
 
-board::board(vector<vector<cell>> s)
-{
-	
-}
-
 board::~board()
 {
 }
