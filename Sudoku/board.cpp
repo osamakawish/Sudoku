@@ -121,12 +121,28 @@ int board::boxNumber(int x, int y)
 	return 3*x + y;
 }
 
-int board::boxRow(int cellRow)
+int board::boxNumber(cell c)
 {
-	return (cellRow / boardSize) + 1;
+	return boxNumber(c.getRow(), c.getCol());
 }
 
-int board::boxCol(int cellCol)
+int board::boxRow(int row)
 {
-	return (cellCol / boardSize) + 1;
+	return (row / boardSize) + 1;
+}
+
+int board::boxCol(int col)
+{
+	return (col / boardSize) + 1;
+}
+
+void board::removeNumber(cell c) {
+	c.setValue(0);
+	locations[c.getValue()].erase(c);
+}
+
+void board::clearCell(cell c) {
+	c.clear();
+	// Update location.
+	locations[c.getValue()].erase(c);
 }

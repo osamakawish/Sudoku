@@ -18,43 +18,45 @@ int cell::getValue()
 	return value;
 }
 
-int cell::getBox()
-{
-	return 0;
-}
-
 int cell::getRow()
 {
-	return 0;
+	return row;
 }
 
 int cell::getCol()
 {
-	return 0;
+	return col;
 }
 
-int cell::getNotes()
+set<int> cell::getNotes()
 {
-	return 0;
+	return notes;
 }
 
 void cell::addNote(int val)
 {
+	notes.insert(val);
 }
 
-void cell::removeNote(int val)
+void cell::eraseNote(int val)
 {
+	notes.erase(val);
 }
 
 bool cell::isEmpty()
 {
-	return false;
+	return value != 0;
 }
 
 void cell::clear()
 {
+	value = 0; notes = {};
 }
 
+void cell::clearNotes()
+{
+	notes = {};
+}
 
 cell::~cell()
 {

@@ -23,8 +23,13 @@ public:
 	vector<cell> box(int x, int y); // Return contents of given boardSize x boardSize box.
 
 	int boxNumber(int x, int y); // Boxes are numbered 1 - boardSize, left - right then up - down.
-	int boxRow(int cellRow); // Get the row of the box given its cell row.
-	int boxCol(int cellCol); // Get the column of the box given its cell column.
+	int boxNumber(cell c); // Box number for a specific cell.
+	int boxRow(int row); // Get the row of the box given its cell row.
+	int boxCol(int col); // Get the column of the box given its cell column.
+
+	void removeNumber(cell c);
+
+	void clearCell(cell c);
 
 private:
 	
