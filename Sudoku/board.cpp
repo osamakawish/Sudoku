@@ -57,10 +57,11 @@ void board::setSize(int s)
 	{
 		// The i'th row on the board.
 		vector<cell> row = contents.at(i); 
+		// Add a cell to i'th row and j'th column.
 		for (int j = 0; j < s*s; j++)
 		{
 			// Cell indexing starts at 0.
-			row.push_back(cell(i+1, j+1)); 
+			row.push_back(cell(i+1, j+1)); // Numbering goes from 1 to s*s.
 		}
 	}
 }
@@ -68,7 +69,7 @@ void board::setSize(int s)
 void board::setCell(cell c, int v) 
 {
 	c.setValue(v);
-	// UNFINISHED: Store info in each of the maps. 
+	
 	locations[v].insert(c);
 }
 
@@ -116,7 +117,7 @@ int board::boxNumber(int x, int y)
 	return 3*x + y;
 }
 
-int board::boxNumber(cell c)
+int board::boxNumber(cell c) 
 {
 	return boxNumber(c.getRow(), c.getCol());
 }
@@ -132,12 +133,12 @@ int board::boxCol(int col)
 }
 
 void board::removeNumber(cell c) {
-	c.setValue(0);
-	locations[c.getValue()].erase(c);
+	c.setValue(0); // Removes value from cell.
+	locations[c.getValue()].erase(c); // Update locations map.
 }
 
 void board::clearCell(cell c) {
-	c.clear();
-	// Update location.
+	c.clear(); // Removes notes and value from cell.
+	// Update locations map.
 	locations[c.getValue()].erase(c);
 }

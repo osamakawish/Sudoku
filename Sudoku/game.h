@@ -7,14 +7,14 @@ public:
 
 	cell goToCell(int x, int y);
 
-	void addInput(cell c, int value);
-
 	void clearBoard(); // Clear the board and resets it to main.
 
 	void setMain(); // Sets current board as main board. For resetting game if necessary.
 
 private:
 	board createRandomBoard();
+
+	int size; int difficulty;
 
 	cell location;
 	set<int> values; int difficulty;

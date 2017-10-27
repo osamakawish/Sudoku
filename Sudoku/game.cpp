@@ -9,7 +9,7 @@ using namespace std;
 
 game::game(int gsize, int difficulty)
 {
-	board();
+	createRandomBoard();
 }
 
 game::~game()
@@ -18,24 +18,26 @@ game::~game()
 
 cell game::goToCell(int x, int y)
 {
-	return cell(x, y);
+	return current.getCell(x, y);
 }
 
-void game::addInput(cell c, int value)
+void game::clearBoard() // May want to be cautious about this.
 {
-}
-
-void game::clearBoard()
-{
-}
-
-void game::setMain()
-{
+	current = main;
 }
 
 board game::createRandomBoard()
 {
-	return board();
+	//// Initialize size x size game board.
+	//board toReturn = board();
+	//toReturn.setSize(game::size);
+	//
+	//srand(time(NULL)); // Random seed.
+
+	//int x = rand() % (toReturn.getSize() ^ 2);
+
+	//main = toReturn; current = toReturn;
+	//return board();
 }
 
 set<board> game::solution()

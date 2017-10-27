@@ -30,6 +30,10 @@ public:
 
 	void clearCell(cell c);
 
+	void fillBoard();
+
+	// Need methods to deal with solutions from current board.
+
 private:
 	
 	int boardSize = 0; // The square root of the width of the square game board.
